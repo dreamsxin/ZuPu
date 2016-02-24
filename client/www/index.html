@@ -1,49 +1,91 @@
 <!DOCTYPE html>
-<!--
-    Licensed to the Apache Software Foundation (ASF) under one
-    or more contributor license agreements.  See the NOTICE file
-    distributed with this work for additional information
-    regarding copyright ownership.  The ASF licenses this file
-    to you under the Apache License, Version 2.0 (the
-    "License"); you may not use this file except in compliance
-    with the License.  You may obtain a copy of the License at
-
-    http://www.apache.org/licenses/LICENSE-2.0
-
-    Unless required by applicable law or agreed to in writing,
-    software distributed under the License is distributed on an
-    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
-     KIND, either express or implied.  See the License for the
-    specific language governing permissions and limitations
-    under the License.
--->
 <html>
-    <head>
-        <!--
-        Customize this policy to fit your own app's needs. For more guidance, see:
-            https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
-        Some notes:
-            * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
-            * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
-            * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
-                * Enable inline JS: add 'unsafe-inline' to default-src
-        -->
-        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *">
-        <meta name="format-detection" content="telephone=no">
-        <meta name="msapplication-tap-highlight" content="no">
-        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
-        <link rel="stylesheet" type="text/css" href="css/index.css">
-        <title>Hello World</title>
-    </head>
-    <body>
-        <div class="app">
-            <h1>Apache Cordova</h1>
-            <div id="deviceready" class="blink">
-                <p class="event listening">Connecting to Device</p>
-                <p class="event received">Device is Ready</p>
-            </div>
-        </div>
-        <script type="text/javascript" src="cordova.js"></script>
-        <script type="text/javascript" src="js/index.js"></script>
-    </body>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *">
+<meta name="format-detection" content="telephone=no">
+<meta name="msapplication-tap-highlight" content="no">
+<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+<script type="text/javascript" src="cordova.js"></script>
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/zupu.js"></script>
+<title>族譜</title>
+<style type="text/css">
+body { padding-top: 70px; }
+</style>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', function () {
+	document.addEventListener('deviceready', function () {
+	}, false);
+});
+</script>
+</head>
+<body>
+<header class="navbar-fixed-top">
+	<div class="container-fluid">
+		<ol class="breadcrumb">
+			<li><a href="index.html">首頁</a></li>
+			<li><a href="#" onclick="zupu.search()">檢索</a></li>
+			<li class="dropdown">
+				<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">我的帳戶 <span class="caret"></span></a>
+				<ul class="dropdown-menu">
+					<li><a href="submit.html">我的族譜</a></li>
+					<li><a href="#">關注收藏</a></li>
+					<li><a href="#"></a></li>
+					<li role="separator" class="divider"></li>
+					<li><a href="#"><span class="glyphicon glyphicon-off icons-padding"></span>退出</a></li>
+				</ul>
+			</li>
+		</ol>
+	</div>
+</header>
+<div class="container-fluid">
+	<div class="panel panel-default">
+		<div class="panel-heading">姓氏</div>
+		<div class="panel-body">
+			<div class="media">
+				<div class="media-left">
+					<a href="#">
+						<img class="media-object" alt="100x100" src="img/xing/zhu.jpeg" data-holder-rendered="true" style="width: 100px;">
+					</a>
+				</div>
+				<div class="media-body">
+					<h4 class="media-heading">朱氏</h4>
+					<p>
+						<span class="label label-default">沛國</span>
+						<span class="label label-primary">丹陽</span>
+						<span class="label label-primary">永城</span>
+						<span class="label label-primary">吳郡</span>
+						<span class="label label-primary">錢塘</span>
+						<span class="label label-primary">義陽</span>
+						<span class="label label-primary">太康</span>
+						<span class="label label-primary">丹徒</span>
+						<span class="label label-primary">河南</span>
+					</p>
+				</div>
+			</div>
+			<div class="media">
+				<div class="media-left">
+					<a href="#">
+						<img class="media-object" alt="100x100" src="img/xing/huang.jpeg" data-holder-rendered="true" style="width: 100px;">
+					</a>
+				</div>
+				<div class="media-body">
+					<h4 class="media-heading">黃氏</h4>
+					<p>
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<nav>
+  <ul class="pager">
+    <li><a href="#">Previous</a></li>
+    <li><a href="#">Next</a></li>
+  </ul>
+</nav>
+</body>
 </html>
